@@ -11,7 +11,11 @@
 
     <modules>
         <module>spring-boot-helloworld</module>
+        <module>spring-boot-activemq</module>
+        <module>spring-boot-kafka</module>
         <module>spring-boot-starter</module>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-zookeeper</module>
     </modules>
 
 

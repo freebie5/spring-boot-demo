@@ -2,8 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.sy.springbootshardingsphere.mapper.OrderMapper">
 
-    <select id="findAll" resultType="org.sy.springbootshardingsphere.entity.Order">
-        select * from order
+    <select id="findAll" resultType="Order">
+        select * from t_order
     </select>
+
+    <insert id="insertOne" parameterType="Order">
+        insert into t_order (order_id, name, user_id)
+        value (#{orderId}, #{name}, #{userId})
+    </insert>
 
 </mapper>

@@ -8,4 +8,6 @@ public interface OrderItemMapper {
 
     List<OrderItem> findAll();
 
+    int insertOne(OrderItem orderItem);
+
 }

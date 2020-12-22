@@ -1,5 +1,6 @@
 package org.sy.springbootshardingsphere.controller;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +29,16 @@ public class OrderController {
         return orderItemService.findAll();
     }
 
+    @RequestMapping("/order/insertOne")
+    public int orderInsertOne(@Param("orderId") long orderId, @Param("userId") long userId,
+                              @Param("name") String name) {
+        return orderService.insertOne(orderId, userId, name);
+    }
 
+    @RequestMapping("/orderItem/insertOne")
+    public int orderItemInsertOne(@Param("orderItemId") long orderItemId, @Param("userId") long userId,
+                                  @Param("name") String name) {
+        return orderItemService.insertOne(orderItemId, userId, name);
+    }
 
 }

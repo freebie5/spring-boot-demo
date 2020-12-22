@@ -17,4 +17,9 @@ public class OrderService {
         return orderMapper.findAll();
     }
 
+    public int insertOne(long orderId, long userId, String name) {
+        Order order = new Order().setOrderId(orderId).setName(name).setUserId(userId);
+        return orderMapper.insertOne(order);
+    }
+
 }

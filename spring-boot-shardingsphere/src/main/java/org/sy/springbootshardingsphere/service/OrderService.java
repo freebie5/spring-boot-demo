@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.sy.springbootshardingsphere.entity.Order;
 import org.sy.springbootshardingsphere.mapper.OrderMapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -17,8 +18,8 @@ public class OrderService {
         return orderMapper.findAll();
     }
 
-    public int insertOne(long orderId, long userId, String name) {
-        Order order = new Order().setOrderId(orderId).setName(name).setUserId(userId);
+    public int insertOne(long orderId, long userId, String name, BigDecimal money) {
+        Order order = new Order().setOrderId(orderId).setName(name).setUserId(userId).setMoney(money);
         return orderMapper.insertOne(order);
     }
 

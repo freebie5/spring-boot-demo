@@ -8,6 +8,8 @@ import org.sy.springbootshardingsphere.entity.Order;
 import org.sy.springbootshardingsphere.entity.OrderItem;
 import org.sy.springbootshardingsphere.service.OrderItemService;
 import org.sy.springbootshardingsphere.service.OrderService;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -31,8 +33,8 @@ public class OrderController {
 
     @RequestMapping("/order/insertOne")
     public int orderInsertOne(@Param("orderId") long orderId, @Param("userId") long userId,
-                              @Param("name") String name) {
-        return orderService.insertOne(orderId, userId, name);
+                              @Param("name") String name, @Param("money") BigDecimal money) {
+        return orderService.insertOne(orderId, userId, name, money);
     }
 
     @RequestMapping("/orderItem/insertOne")

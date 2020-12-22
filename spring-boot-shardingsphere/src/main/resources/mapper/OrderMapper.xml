@@ -7,8 +7,8 @@
     </select>
 
     <insert id="insertOne" parameterType="Order">
-        insert into t_order (order_id, name, user_id)
-        value (#{orderId}, #{name}, #{userId})
+        insert into t_order (order_id, name, user_id, money)
+        value (#{orderId}, #{name}, #{userId}, #{money})
     </insert>
 
 </mapper>

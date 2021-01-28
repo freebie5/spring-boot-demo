@@ -8,6 +8,7 @@ import org.sy.springbootshardingsphere.entity.Order;
 import org.sy.springbootshardingsphere.entity.OrderItem;
 import org.sy.springbootshardingsphere.service.OrderItemService;
 import org.sy.springbootshardingsphere.service.OrderService;
+import org.sy.springbootshardingsphere.service.UserService;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,6 +26,9 @@ public class OrderController {
 
     @Autowired
     private OrderItemService orderItemService;
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/order/findAll")
     public List<Order> orderFindAll() {
@@ -46,6 +50,11 @@ public class OrderController {
     public int orderItemInsertOne(@Param("orderItemId") long orderItemId, @Param("userId") long userId,
                                   @Param("name") String name) {
         return orderItemService.insertOne(orderItemId, userId, name);
+    }
+
+    @RequestMapping("/user/insertOne")
+    public int userInsertOne(@Param("userId") long userId, @Param("name") String name) {
+        return userService.insertOne(userId, name);
     }
 
 }

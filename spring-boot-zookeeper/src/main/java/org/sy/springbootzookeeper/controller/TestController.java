@@ -5,6 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.sy.springbootzookeeper.service.TestService;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController {

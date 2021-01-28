@@ -6,14 +6,19 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 public class ProducerDemo {
 
-    private static final String brokers = "192.168.1.143:9092";
-    private static final String topic = "topic-demo";
+    private static final String BROKERS = "192.168.1.143:9092";
+    private static final String TOPIC = "topic-demo";
 
     public static Properties init() {
         Properties properties = new Properties();
-        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokers);
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BROKERS);
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.put(ProducerConfig.CLIENT_ID_CONFIG, "producer.client.id.demo");
@@ -33,7 +38,7 @@ public class ProducerDemo {
 
     public static void main(String[] args) {
         KafkaProducer<String,String> producer = new KafkaProducer<String, String>(init());
-        ProducerRecord<String,String> record = new ProducerRecord<String, String>(topic, 0, "hellokey", "hello kafka");
+        ProducerRecord<String,String> record = new ProducerRecord<String, String>(TOPIC, 0, "hellokey", "hello kafka");
 
         //默认分区器
         //可以指ProducerRecord类的入参指定partition和key
@@ -74,6 +79,8 @@ public class ProducerDemo {
                         }
                     }
                 });
+                break;
+            default:
                 break;
         }
         //关闭生产者

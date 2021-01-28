@@ -5,6 +5,11 @@ import redis.clients.jedis.params.SetParams;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 public class RedisWithReentrantLock {
 
     private ThreadLocal<Map<String,Integer>> locks = new ThreadLocal<>();
@@ -31,7 +36,7 @@ public class RedisWithReentrantLock {
         if(refs!=null) {
             return refs;
         }
-        locks.set(new HashMap<String,Integer>());
+        locks.set(new HashMap<String,Integer>(16));
         return locks.get();
     }
 

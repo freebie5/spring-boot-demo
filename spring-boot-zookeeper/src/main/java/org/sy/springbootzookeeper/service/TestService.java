@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.sy.springbootzookeeper.util.DistributedLock;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @Service
 public class TestService {
 

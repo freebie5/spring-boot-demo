@@ -11,6 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @Slf4j
 @Component
 public class DistributedLock implements InitializingBean {

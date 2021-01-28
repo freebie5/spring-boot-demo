@@ -5,6 +5,11 @@ import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @Data
 @Accessors(chain = true)
 public class Order {

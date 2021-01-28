@@ -5,12 +5,18 @@ import redis.clients.jedis.params.SetParams;
 
 import java.util.Set;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 public class RedisDemo {
 
     public static void main(String[] args) {
         String ip = "192.168.1.182";
         int port = 6379;
-        Jedis jedis = new Jedis(ip, port);//Redis链接超时时间300秒
+        //Redis链接超时时间300秒
+        Jedis jedis = new Jedis(ip, port);
         jedis.auth("123456");
 //        String key = "likeTop";
 //        jedis.zadd(key, 10, "Java");

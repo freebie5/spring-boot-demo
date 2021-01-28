@@ -5,6 +5,11 @@ import org.springframework.stereotype.Component;
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @Component
 public class DemoListener {
 

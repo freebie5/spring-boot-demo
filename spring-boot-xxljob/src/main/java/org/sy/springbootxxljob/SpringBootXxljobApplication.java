@@ -1,4 +1,4 @@
-package org.sy.springbootkafka;
+package org.sy.springbootxxljob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
-public class SpringBootKafkaApplication {
+public class SpringBootXxljobApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootKafkaApplication.class, args);
+        SpringApplication.run(SpringBootXxljobApplication.class, args);
     }
 
 }

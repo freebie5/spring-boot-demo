@@ -5,6 +5,11 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * @Author john
+ * @Date 2021/1/28 23:39
+ * @Version 1.0
+ */
 @Component
 public class ConsumerListener {
 

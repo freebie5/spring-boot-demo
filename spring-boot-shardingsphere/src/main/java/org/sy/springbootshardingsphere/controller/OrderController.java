@@ -1,11 +1,14 @@
 package org.sy.springbootshardingsphere.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.sy.springbootshardingsphere.entity.Order;
 import org.sy.springbootshardingsphere.entity.OrderItem;
+import org.sy.springbootshardingsphere.entity.Salary;
+import org.sy.springbootshardingsphere.mapper.SalaryMapper;
 import org.sy.springbootshardingsphere.service.OrderItemService;
 import org.sy.springbootshardingsphere.service.OrderService;
 import org.sy.springbootshardingsphere.service.UserService;
@@ -30,6 +33,9 @@ public class OrderController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private SalaryMapper salaryMapper;
+
     @RequestMapping("/order/findAll")
     public List<Order> orderFindAll() {
         return orderService.findAll();
@@ -43,6 +49,8 @@ public class OrderController {
     @RequestMapping("/order/insertOne")
     public int orderInsertOne(@Param("orderId") long orderId, @Param("userId") long userId,
                               @Param("name") String name, @Param("money") BigDecimal money) {
+        QueryWrapper<Salary> queryWrapper = new QueryWrapper<>();
+        List<Salary> list = salaryMapper.selectList(queryWrapper);
         return orderService.insertOne(orderId, userId, name, money);
     }
 

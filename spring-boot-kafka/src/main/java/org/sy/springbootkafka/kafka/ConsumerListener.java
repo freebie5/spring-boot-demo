@@ -15,7 +15,7 @@ public class ConsumerListener {
 
     private final static Log logger = LogFactory.getLog(ConsumerListener.class);
 
-    @KafkaListener(topics = "test")
+    @KafkaListener(topics = "test", concurrency = "2")
     public void processMessage(String content) {
         logger.info("kafka消费者收到消息：");
         logger.info(content);

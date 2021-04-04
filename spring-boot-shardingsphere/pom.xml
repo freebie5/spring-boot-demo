@@ -16,7 +16,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <sharding.version>4.0.0</sharding.version>
     </properties>
 
     <dependencies>
@@ -55,14 +54,14 @@
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-            <version>${sharding.version}</version>
+            <version>4.1.1</version>
         </dependency>
 
         <!--mp的配置-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.2</version>
         </dependency>
 
         <!--mybatis的配置，和mp的配置二选一-->
@@ -76,8 +75,12 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>3.1.1</version>
+            <version>3.3.2</version>
         </dependency>
+
+        <!--dynamic-datasource和sharding需要版本兼容，不然启动报错-->
+        <!--dynamic-datasource3.3.2配合sharding-jdbc-spring-boot-starter4.1.1-->
+        <!--dynamic-datasource3.1.1配合sharding-jdbc-spring-boot-starter4.0.0-->
 
     </dependencies>
 

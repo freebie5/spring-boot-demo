@@ -1,4 +1,4 @@
-package org.sy.springbootkafka.kafka;
+package org.sy.springbootkafka.kafka.original;
 
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;

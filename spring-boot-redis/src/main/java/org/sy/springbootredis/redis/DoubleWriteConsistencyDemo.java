@@ -44,9 +44,9 @@ public class DoubleWriteConsistencyDemo {
     public void updataCacheBeforeUpdateDB(String id, String data) {
         //更新缓存
         setData2Redis(id, data);
-        if("1".equals(id)) {
-            throw new RuntimeException();
-        }
+//        if("1".equals(id)) {
+//            throw new RuntimeException();
+//        }
         //更新数据库
         setData2DB(id, data);
     }
@@ -70,13 +70,13 @@ public class DoubleWriteConsistencyDemo {
     public void updateDBBeforeUpdateCache(String id, String data) {
         //更新数据库
         setData2DB(id, data);
-        if("hello".equals(data)) {
-            try {
-                Thread.sleep(10*1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+//        if("hello".equals(data)) {
+//            try {
+//                Thread.sleep(10*1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
         //更新缓存
         setData2Redis(id, data);
     }

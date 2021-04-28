@@ -1,4 +1,4 @@
-package org.sy.springbootkafka.kafka;
+package org.sy.springbootkafka.kafka.original;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -27,7 +27,7 @@ public class ProducerDemo {
         //acks=1，leader副本写入成功，broker就发响应。
         //acks=-1或者acks=all，需要等待ISR中的所有副本都成功，broker才发响应。
         //特定情况下ISR只有leader副本，那么退化为acks=1的情况。配置min.insync.replicas参数获得更高的可靠性。
-        properties.put(ProducerConfig.ACKS_CONFIG, "-1");
+        properties.put(ProducerConfig.ACKS_CONFIG, "-1");//acks的值是一个字符串
 
         return properties;
     }
@@ -38,15 +38,15 @@ public class ProducerDemo {
 
     public static void main(String[] args) {
         KafkaProducer<String,String> producer = new KafkaProducer<String, String>(init());
-        ProducerRecord<String,String> record = new ProducerRecord<String, String>(TOPIC, 0, "hellokey", "hello kafka");
+        ProducerRecord<String,String> record = new ProducerRecord<String, String>(TOPIC, 0, "dd", "{\"name\":\"t\"}");
 
         //默认分区器
         //可以指ProducerRecord类的入参指定partition和key
         //public ProducerRecord(String topic, Integer partition, Long timestamp, K key, V value, Iterable<Header> headers)
         //1 指定了partition的话，就发送消息到指定的partition
         //2 未指定partition的话，按照下面的规制：
-        //2.1 key=null时，轮询的方式，发送消息到各个分区
-        //2.2 key!=null时，对key进行hash再求余的方式，发送消息到分区
+        //2.1 key=null时，轮询的方式，发送消息到“可用”分区中的一个
+        //2.2 key!=null时，对key进行hash再求余的方式，发送消息到“所有”分区中的一个
 
 
         int sendType = ASYNC;

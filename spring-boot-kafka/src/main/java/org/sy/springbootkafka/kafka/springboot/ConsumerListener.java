@@ -1,4 +1,4 @@
-package org.sy.springbootkafka.kafka;
+package org.sy.springbootkafka.kafka.springboot;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

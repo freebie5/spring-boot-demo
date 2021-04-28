@@ -1,0 +1,12 @@
+@startuml
+
+entity 服务A
+entity 服务B
+entity 服务C
+
+服务A->服务B:
+服务B->服务C:
+服务C-->服务B:
+服务B-->服务A:
+
+@enduml

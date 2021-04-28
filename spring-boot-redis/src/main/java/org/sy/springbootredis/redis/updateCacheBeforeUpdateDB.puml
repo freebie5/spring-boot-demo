@@ -1,0 +1,24 @@
+plantuml画流程图教程：https://blog.csdn.net/zhangjikuan/article/details/53484558
+
+@startuml
+
+start
+
+if(是否开启) then(是)
+  :走旧逻辑;
+else(否)
+  if(random > factor) then(是)
+    :走新逻辑;
+  else
+    :走旧逻辑;
+  endif
+endif
+if (是否发送对比消息) then (是)
+  :发送对比消息;
+else (否)
+
+endif
+
+stop
+
+@enduml

@@ -6,4 +6,5 @@ package org.sy.springboothelloworld.config;
  * @Version 1.0
  */
 public class A {
+    // test
 }

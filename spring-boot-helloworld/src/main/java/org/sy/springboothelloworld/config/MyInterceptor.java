@@ -19,7 +19,7 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
 
-        log.info("hello dump");
+//        log.info("hello dump");
         return true;
     }
 
